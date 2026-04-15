@@ -61,14 +61,14 @@ resource "aws_instance" "myFirstInstance" {
 }
 
 # Create Elastic IP address
-resource "aws_eip" "myFirstInstanc" {
-  instance = aws_instance.myFirstInstance.id
+# resource "aws_eip" "myFirstInstanc" {
+  # instance = aws_instance.myFirstInstance.id
 
-  depends_on = [aws_internet_gateway.igw]  # 👈 IMPORTANT
-tags= {
-    Name = "my_elastic_ip"
-  }
-}
+  # depends_on = [aws_internet_gateway.igw]  # 👈 IMPORTANT
+# tags= {
+   # Name = "my_elastic_ip"
+ # }
+# }
 # 2. Subnet
 resource "aws_subnet" "public_subnet" {
   vpc_id                  = aws_vpc.main.id
