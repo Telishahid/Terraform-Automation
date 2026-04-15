@@ -63,7 +63,6 @@ resource "aws_instance" "myFirstInstance" {
 # Create Elastic IP address
 resource "aws_eip" "myFirstInstanc" {
   instance = aws_instance.myFirstInstance.id
-  vpc      = true
 
   depends_on = [aws_internet_gateway.igw]  # 👈 IMPORTANT
 tags= {
