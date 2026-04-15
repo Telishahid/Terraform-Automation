@@ -67,7 +67,7 @@ resource "aws_eip" "myFirstInstance" {
 tags= {
     Name = "my_elastic_ip"
   }
-
+}
 # 2. Subnet
 resource "aws_subnet" "public_subnet" {
   vpc_id                  = aws_vpc.main.id
@@ -109,4 +109,4 @@ resource "aws_route_table_association" "assoc" {
   subnet_id      = aws_subnet.public_subnet.id
   route_table_id = aws_route_table.public_rt.id
 }
-}
+
